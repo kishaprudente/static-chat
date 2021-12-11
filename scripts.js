@@ -26,7 +26,6 @@ const getData = async () => {
 getData();
 
 const renderMessages = (messages) => {
-    console.log(messages);
     messages.map(msg => {
         const { username, image, message, timestamp, focused } = msg;
 
@@ -59,7 +58,7 @@ const renderMessages = (messages) => {
         name.classList.add('name');
         name.textContent = username;
         detailsContainer.appendChild(name);
-        
+
         // Time
         const time = document.createElement('span');
         time.classList.add('time');
@@ -68,7 +67,7 @@ const renderMessages = (messages) => {
             minute: 'numeric',
         });
         time.innerHTML = `
-            <img class='clock' src="https://img.icons8.com/material-outlined/15/000000/clock--v1.png"/> ${msgTime}
+            <img class='clock' alt='clock icon' src="https://img.icons8.com/material-outlined/15/000000/clock--v1.png"/> ${msgTime}
         `;
         detailsContainer.appendChild(time);
 
